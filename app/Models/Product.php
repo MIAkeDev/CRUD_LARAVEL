@@ -26,7 +26,7 @@ class Product extends Model
     protected function formattedPrice(): Attribute
     {
         return Attribute::make(
-            get: fn () => ($this->currency->symbol ?? 'S/') . ' ' . $this->price,
+            get: fn () => ($this->currency?->symbol ?? 'S/') . ' ' . $this->price,
         );
     }
 }
